@@ -1,0 +1,16 @@
+<ion-navbar *navbar>
+  <ion-title>
+    <!--{{training.description}}-->
+  </ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ng-for="#task of tasks">
+      <ion-avatar item-left>
+      </ion-avatar>
+      <h2>{{task.description}}</h2>
+      <p>Ugh. As if.</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

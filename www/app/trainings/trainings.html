@@ -1,0 +1,16 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Training
+  </ion-title>
+</ion-navbar>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ng-for="#trainingDay of trainingDays" (click)="chooseTraining(trainingDay)">
+      <ion-avatar item-left>
+        <img src="../img/appicon.png">
+      </ion-avatar>
+      <h2>{{trainingDay.description}}</h2>
+      <p>Traaaaing</p>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

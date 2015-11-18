@@ -1,6 +1,6 @@
 import {Page} from 'ionic/ionic';
 import {Dash} from '../dash/dash';
-import {Chats} from '../chats/chats';
+import {Trainings} from '../trainings/trainings';
 import {Account} from '../account/account';
 
 @Page({
@@ -9,7 +9,7 @@ import {Account} from '../account/account';
 export class TabsPage {
   constructor() {
     this.DashRoot = Dash;
-    this.ChatsRoot = Chats;
+    this.TrainingRoot = Trainings;
     this.AccountRoot = Account;
   }
 }
