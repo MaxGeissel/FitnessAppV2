@@ -1,13 +1,20 @@
-import {Page, NavParams} from 'ionic/ionic';
-import {Trainings} from '../data/data';
+import {Page, NavParams, NavController} from 'ionic/ionic';
+import {TrainingTaskDetail} from '../trainingtaskdetail/trainingtaskdetail';
 
 @Page({
   templateUrl: 'app/trainingtasks/trainingtasks.html'
 })
 export class TrainingTasks {
-  constructor(params: NavParams, trainings:Trainings) {
-    this.training = params.get('description');
-    this.trainings = trainings.getDayTrainings(1);
-    this.tasks = this.trainings.getTasks();
+  constructor(params: NavParams, nav:NavController) {
+    this.nav = nav;
+    this.choosedDay = params.get('choosedDay');
+    this.dayTasks = this.choosedDay.tasks;
+  }
+
+  chooseTask(task){
+    console.log("Goo");
+    this.nav.push(TrainingTaskDetail,{
+      choosedTask:task
+    });
   }
 }

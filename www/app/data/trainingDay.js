@@ -5,7 +5,4 @@ export class TrainingDay{
     this.description = description;
     this.tasks = tasks;
   }
-  getTasks () {
-    return this.tasks;
-  }
 }

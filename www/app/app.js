@@ -1,12 +1,12 @@
 import {App, Platform, StatusBar} from 'ionic/ionic';
 import {TabsPage} from './tabs/tabs';
 import {TrainingData} from './data/data';
-import {Trainings} from './data/data';
+import {HistoryData} from './data/data';
 import './app.scss';
 
 @App({
   template: '<ion-nav [root]="root"></ion-nav>',
-  providers: [TrainingData,Trainings]
+  providers: [TrainingData,HistoryData]
 })
 export class TabsPage {
   constructor(platform: Platform) {

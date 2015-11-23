@@ -6,11 +6,10 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ng-for="#task of tasks">
+    <ion-item *ng-for="#task of dayTasks" (click)="chooseTask(task)">
       <ion-avatar item-left>
       </ion-avatar>
       <h2>{{task.description}}</h2>
-      <p>Ugh. As if.</p>
     </ion-item>
   </ion-list>
 </ion-content>
