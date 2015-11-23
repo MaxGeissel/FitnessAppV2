@@ -1,8 +1,6 @@
 module.exports = {
   name: 'FitnessApp',
-  proxies: null,
-
-  // hooks execute before or after all project-related Ionic commands
+  proxies: null,  // hooks execute before or after all project-related Ionic commands
   // (so not for start, docs, but serve, run, etc.) and take in the arguments
   // passed to the command as a parameter
   //
