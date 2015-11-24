@@ -1,3 +1,4 @@
+import {Storage, SqlStorage, IonicPlatform} from 'ionic/ionic';
 import {TrainingDay} from '../data/TrainingDay';
 import {Task} from '../data/Task';
 import {Set} from '../data/Set';
@@ -28,5 +29,34 @@ export class HistoryData{
       new HistorySet("23.11.2015",12,10),
       new HistorySet("25.11.2015",10,10)
     ];
+  }
+}
+
+export class LocalStorage{
+  constructor(){
+    this.storage = new Storage(SqlStorage);
+  }
+
+  setValue(key:string,value:any){
+    this.storage.set(key,value);
+  }
+
+  getValue(key:string){
+    this.storage.get(key).then(value =>{
+      return value;
+    })
+  }
+
+  getValues(operator:string,table:string,?where:string,?is:string)
+  {
+    withWhere = 'select' + operator + 'from' + table + 'where' + where + '=' is;
+    withoutWhere = 'select' + operator + 'from' + table;
+    if(where != null)
+    {
+      return this.storage.query(withWhere);
+    }
+    else {
+      return this.storage.query(withoutWhere);
+    }
   }
 }

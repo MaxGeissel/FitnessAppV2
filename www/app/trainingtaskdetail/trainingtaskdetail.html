@@ -45,6 +45,28 @@
           {{histSet.weight}}
         </ion-col>
       </ion-row>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        Today
+      </ion-card-header>
+      <ion-row *ng-for="#set of sets; #i=index">
+        <ion-col>
+          <ion-input stacked-label>
+            <ion-label>Repeats Set {{i+1}}</ion-label>
+            <input type="text">
+          </ion-input>
+        </ion-col>
+        <ion-col>
+          <ion-input stacked-label>
+            <ion-label>Weight Set {{i+1}}</ion-label>
+            <input type="text">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+      <button full>
+        Save
+      </button>
     </ion-card-content>
   </ion-card>
 </ion-content>
