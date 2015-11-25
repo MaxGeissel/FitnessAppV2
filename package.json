@@ -17,7 +17,8 @@
   "name": "fitnessapp",
   "description": "FitnessApp: An Ionic project",
   "cordovaPlugins": [
-    "cordova-sqlite-storage"
+    "cordova-sqlite-storage",
+    "ionic-plugin-deploy"
   ],
   "cordovaPlatforms": []
 }

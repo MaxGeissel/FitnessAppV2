@@ -8,8 +8,7 @@ export class TrainingTaskDetail {
   constructor(params:NavParams, historyData:HistoryData){
     this.choosedTask = params.get('choosedTask');
     this.sets = this.choosedTask.sets;
+    console.log(this.sets);
     this.historySets = historyData.historySets;
-    console.log("History Sets");
-    console.log(this.historySets);
   }
 }

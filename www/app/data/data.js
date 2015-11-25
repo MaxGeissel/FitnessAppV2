@@ -7,12 +7,11 @@ import {HistorySet} from '../data/HistorySet';
 export class TrainingData {
   constructor() {
     this.sets:Array<Set>;
-    this.sets = [new Set(10,10),new Set(10,10)];
+    this.sets = [new Set(10,10,1),new Set(10,10,1)];
     this.sets2:Array<Set>;
-    this.sets2 = [new Set(10,10),new Set(10,10),new Set(10,10)];
+    this.sets2 = [new Set(10,10,1),new Set(10,10,1),new Set(10,10,1)];
     this.brustBizepsTasks:Array<Task>;
     this.brustBizepsTasks = [new Task(1,"Schrägbankdrücken",this.sets),new Task(2,"Hanteln",this.sets2)];
-
     this.trainingDays  = [new TrainingDay(1,"Brust Bizeps",this.brustBizepsTasks)];
   }
 }

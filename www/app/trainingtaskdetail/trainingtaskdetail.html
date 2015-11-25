@@ -4,53 +4,34 @@
   </ion-title>
 </ion-navbar>
 <ion-content>
-  <!--<ion-row *ng-for="#set of sets">
-    <ion-col>
-        <ion-input stacked-label>
-          <ion-label>Target</ion-label>
-          <input type="text" placeholder="{{set.repeats}}" disabled>
-        </ion-input>
-    </ion-col>
-    <ion-col>
-        <ion-input stacked-label>
-          <ion-label>Last</ion-label>
-          <input type="text" placeholder="lastValue" disabled>
-        </ion-input>
-    </ion-col>
-    <ion-col>
-        <ion-input stacked-label>
-          <ion-label>New</ion-label>
-          <input type="text" placeholder="newValue">
-        </ion-input>
-    </ion-col>
-  </ion-row>-->
+<ion-card>
+  <ion-card-header>
+    History
+  </ion-card-header>
+  <ion-card-content>
+    <ion-row>
+      <ion-col>Datum</ion-col>
+      <ion-col>Repeats</ion-col>
+      <ion-col>Weight</ion-col>
+    </ion-row>
+    <ion-row *ng-for="#histSet of historySets">
+      <ion-col>
+        {{histSet.date}}
+      </ion-col>
+      <ion-col>
+        {{histSet.repeats}}
+      </ion-col>
+      <ion-col>
+        {{histSet.weight}}
+      </ion-col>
+    </ion-row>
+  </ion-card>
   <ion-card>
     <ion-card-header>
-      History
+      Today
     </ion-card-header>
-    <ion-card-content>
-      <ion-row>
-        <ion-col>Datum</ion-col>
-        <ion-col>Repeats</ion-col>
-        <ion-col>Weight</ion-col>
-      </ion-row>
-      <ion-row *ng-for="#histSet of historySets">
-        <ion-col>
-          {{histSet.date}}
-        </ion-col>
-        <ion-col>
-          {{histSet.repeats}}
-        </ion-col>
-        <ion-col>
-          {{histSet.weight}}
-        </ion-col>
-      </ion-row>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        Today
-      </ion-card-header>
-      <ion-row *ng-for="#set of sets; #i=index">
+    <div *ng-for="#set of sets; #i=index">
+      <ion-row *ng-if="set.setTyp == 1">
         <ion-col>
           <ion-input stacked-label>
             <ion-label>Repeats Set {{i+1}}</ion-label>
@@ -64,9 +45,10 @@
           </ion-input>
         </ion-col>
       </ion-row>
-      <button full>
-        Save
-      </button>
-    </ion-card-content>
+    </div>
+    <button full>
+      Save
+    </button>
+  </ion-card-content>
   </ion-card>
 </ion-content>
