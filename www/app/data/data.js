@@ -4,8 +4,13 @@ import {Task} from '../data/Task';
 import {Set} from '../data/Set';
 import {HistorySet} from '../data/HistorySet';
 
+declare function require(name: string): any;
+let PouchDB = require('pouchdb');
+
 export class TrainingData {
   constructor() {
+    this.db = new PouchDB('trainingdata');
+
     this.sets:Array<Set>;
     this.sets = [new Set(10,10,1),new Set(10,10,1)];
     this.sets2:Array<Set>;
@@ -13,12 +18,7 @@ export class TrainingData {
     this.brustBizepsTasks:Array<Task>;
     this.brustBizepsTasks = [new Task(1,"Schrägbankdrücken",this.sets),new Task(2,"Hanteln",this.sets2)];
     this.trainingDays  = [new TrainingDay(1,"Brust Bizeps",this.brustBizepsTasks)];
-  }
-}
 
-export class HistoryData{
-  constructor()
-  {
     this.historySets =
     [
       new HistorySet("26.10.2015",10,10),
