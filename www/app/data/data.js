@@ -9,8 +9,6 @@ let PouchDB = require('pouchdb');
 
 export class TrainingData {
   constructor() {
-    this.db = new PouchDB('trainingdata');
-
     this.sets:Array<Set>;
     this.sets = [new Set(10,10,1),new Set(10,10,1)];
     this.sets2:Array<Set>;
@@ -31,31 +29,8 @@ export class TrainingData {
   }
 }
 
-export class LocalStorage{
+export class DataController{
   constructor(){
-    this.storage = new Storage(SqlStorage);
-  }
-
-  setValue(key:string,value:any){
-    this.storage.set(key,value);
-  }
-
-  getValue(key:string){
-    this.storage.get(key).then(value =>{
-      return value;
-    })
-  }
-
-  getValues(operator:string,table:string,?where:string,?is:string)
-  {
-    withWhere = 'select' + operator + 'from' + table + 'where' + where + '=' is;
-    withoutWhere = 'select' + operator + 'from' + table;
-    if(where != null)
-    {
-      return this.storage.query(withWhere);
-    }
-    else {
-      return this.storage.query(withoutWhere);
-    }
+    this.db = new PouchDB('trainingdata');
   }
 }

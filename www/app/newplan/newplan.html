@@ -20,11 +20,8 @@
     Training Days
   </ion-card-header>
   <ion-list>
-    <ion-item>
-      Brust Bizeps
-    </ion-item>
-    <ion-item>
-      Schulter Trizeps
+    <ion-item *ng-for="#day of days" (click)="clickItem(day)">
+      {{day.description}}
     </ion-item>
   </ion-list>
   <button block (click)="newTrainingDay()">new Training Day</button>

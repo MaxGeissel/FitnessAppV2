@@ -4,5 +4,17 @@
   </ion-title>
 </ion-navbar>
 <ion-content>
+  <ion-list>
+  <ion-input fixed-label>
+    <ion-label>Name</ion-label>
+    <input type="text" value="{{choosedPlan.description}}" placeholder="{{choosedPlan.description}}">
+  </ion-input>
 
+  <ion-input fixed-label>
+    <ion-label>Description</ion-label>
+    <input type="text" value="">
+  </ion-input>
+
+</ion-list>
+<button block (click)="save()"> Save</button>
 </ion-content>
