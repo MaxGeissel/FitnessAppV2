@@ -1,0 +1,32 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Config - Plan
+  </ion-title>
+</ion-navbar>
+<ion-content>
+  <ion-list>
+  <ion-input floating-label>
+    <ion-label>Planname</ion-label>
+    <input type="text" value="">
+  </ion-input>
+
+  <ion-input floating-label>
+    <ion-label>Short Description</ion-label>
+    <input type="text" value="">
+  </ion-input>
+</ion-list>
+<ion-card>
+  <ion-card-header>
+    Training Days
+  </ion-card-header>
+  <ion-list>
+    <ion-item>
+      Brust Bizeps
+    </ion-item>
+    <ion-item>
+      Schulter Trizeps
+    </ion-item>
+  </ion-list>
+  <button block (click)="newTrainingDay()">new Training Day</button>
+</ion-card>
+</ion-content>
